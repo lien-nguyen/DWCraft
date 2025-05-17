@@ -8,6 +8,7 @@ __pycache__/
 *.pyo
 *.pyd
 venv/
+.venv
 build/
 dist/
 *.egg-info/
@@ -26,3 +27,5 @@ staticfiles/
 
 # media/uploads or markdown content
 course/modules/*.
+
+.python-version
