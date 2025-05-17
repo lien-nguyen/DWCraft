@@ -29,3 +29,6 @@ staticfiles/
 course/modules/*.
 
 .python-version
+
+# ignore github-actions for now 
+.github/workflows/django.yml
