@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  django-db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: django_db
+      POSTGRES_USER: django
+      POSTGRES_PASSWORD: django
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  django-app:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    env_file:
+      - .env
+
+volumes:
+  pgdata:
