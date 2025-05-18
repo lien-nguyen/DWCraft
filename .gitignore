@@ -34,3 +34,13 @@ img/
 
 # ignore github-actions for now 
 .github/workflows/django.yml
+
+# Sphinx documentation build output
+docs/_build/
+docs/.doctrees/
+docs/.buildinfo
+
+# Sphinx cache and temporary files
+docs/.coverage
+docs/.pytest_cache/
+docs/.DS_Store
