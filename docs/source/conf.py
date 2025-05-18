@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'build2teach'
-copyright = '2025, Thi Bich Lien Nguyen'
+copyright = '2025 Thi Bich Lien Nguyen'
 author = 'Thi Bich Lien Nguyen'
 release = '1.0'
 
@@ -19,6 +19,7 @@ extensions = []
 templates_path = ['_templates']
 exclude_patterns = []
 
+pygments_style = "friendly"
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -26,3 +27,6 @@ exclude_patterns = []
 
 html_theme = 'alabaster'
 html_static_path = ['_static']
+
+def setup(app):
+    app.add_css_file('custom.css')

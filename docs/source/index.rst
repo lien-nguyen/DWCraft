@@ -15,6 +15,7 @@ build2teach documentation
    :caption: Contents:
 
    setup 
+   content
 
 Project Overview
 ----------------
