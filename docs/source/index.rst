@@ -6,12 +6,26 @@
 build2teach documentation
 =========================
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
+**build2teach** is a modern Data Course Platform built with Django, Docker, and PostgreSQL.
+
 
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+
+   setup 
+
+Project Overview
+----------------
+
+build2teach provides a modular platform for delivering data courses, featuring:
+
+- Blog and course modules
+
+- User authentication and email signup
+
+- Markdown-based course content
+
+- Dockerized development and deployment
 
