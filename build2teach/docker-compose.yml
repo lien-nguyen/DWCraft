@@ -8,19 +8,23 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
     ports:
-      - "5433:5432"
+      - "55433:5432"
 
   django-app:
-    build: .
+    build: 
+      context: ..
+      dockerfile: build2teach/Dockerfile
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/code
+      - .:/build2teach
     ports:
       - "8000:8000"
     depends_on:
       - django-db
     env_file:
       - .env
+    environment:
+      - DJANGO_SETTINGS_MODULE=dwh_course.settings
 
 volumes:
   pgdata:

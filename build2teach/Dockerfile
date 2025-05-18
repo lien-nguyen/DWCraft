@@ -4,13 +4,13 @@ FROM python:3.12-slim-bookworm
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-WORKDIR /code
+WORKDIR /build2teach
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y && apt-get -y install gcc && apt-get clean 
 
 # Install Python dependencies
-COPY requirements.txt /code/
+COPY build2teach/requirements.txt /build2teach//
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
-COPY . /code/
+COPY . /build2teach//

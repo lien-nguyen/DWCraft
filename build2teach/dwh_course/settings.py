@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "core",
 ]
 
 MIDDLEWARE = [
@@ -49,7 +50,8 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "build2teach.urls"
+#ROOT_URLCONF = "build2teach.urls"
+ROOT_URLCONF = "dwh_course.urls"
 
 TEMPLATES = [
     {
@@ -67,7 +69,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "build2teach.wsgi.application"
+#WSGI_APPLICATION = "build2teach.wsgi.application"
+WSGI_APPLICATION = "dwh_course.wsgi.application"
 
 
 # Database
