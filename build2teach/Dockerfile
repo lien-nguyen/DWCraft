@@ -7,12 +7,9 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /code
 
 # Install system dependencies
-RUN apt-get update && apt-get install -y \
-    && apt-get -y install gcc \
-    && apt-get clean 
+RUN apt-get update && apt-get install -y && apt-get -y install gcc && apt-get clean 
 
 # Install Python dependencies
-RUN pip-install --upgrade pip
 COPY requirements.txt /code/
 RUN pip install --upgrade pip && pip install -r requirements.txt
 
