@@ -30,6 +30,7 @@ staticfiles/
 course/modules/*.
 
 .python-version
+img/
 
 # ignore github-actions for now 
 .github/workflows/django.yml
