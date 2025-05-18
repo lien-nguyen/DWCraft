@@ -1,14 +1,13 @@
 # DWCraft
 
-**DWCraft** is an open-source project that demonstrates how to build a modern data warehouse course platform from scratch — using Django, Docker, PostgreSQL, and markdown-based course content. This project forms the technical backbone of the `Build2Teach` learning platform.
+**DWCraft** is a Django-based project designed to support the development of a professional course platform. 
 
-> ⚠️ **Work in Progress**: This repository is currently under private development (pre-release). Expect rapid changes, incomplete features, and evolving structure. The project will be made public once a minimal working version is stable.
+> ⚠️ This project is currently in development.
 
-## 🚀 Project Goals
-- Develop a self-hosted platform for delivering structured, high-quality online courses
-- Use open source tools exclusively (no commercial BI tools)
-- Showcase end-to-end CI/CD integration
-- Align with DevOps and reproducible data architecture principles
+## 🚀 Project Vision
+- Build and learn by doing: this project documents a solo journey into developing, deploying, and managing a course platform from scratch.
+- Explore best practices in Django development, open-source tooling, CI/CD workflows, and content management.
+- Serve as a foundation for future educational products and business initiatives.
 
 ## 🔧 Tech Stack
 - Python 3.12
@@ -19,29 +18,23 @@
 - GitHub Actions for CI
 - TailwindCSS (or Bootstrap)
 
-## 📂 Repo Structure
+## 📂 Project Structure (to be extended)
 ```
 dwhcraft/
-├── build2teach/          # Django project folder
-├── course/               # App for course modules
-├── blog/                 # App for blog posts
-├── core/                 # App for homepage/about/contact
-├── users/                # Auth, newsletter, registration
-├── static/               # Images, CSS, JS
-├── templates/            # HTML templates
 ├── Dockerfile
-├── docker-compose.yml
-├── .env.example
-├── requirements.txt
-└── manage.py
+│   ├── core
+│   ├── docker-compose.yml
+│   ├── dwh_course
+│   ├── manage.py
+│   ├── requirements.txt
+│   ├── static
+│   │   ├── css
+│   │   └── img
+│   └── templates
 ```
 
-## 📖 Powered by `Build2Teach`
-This codebase supports the instructional project and upcoming book:
-
-> **Build2Teach: From Dev to Production with Django and Open Source**
-
-For more info, visit [coming soon](https://build2teach.com) 🚧
+## 📖 Part of the Build2Teach Initiative
+This codebase is part of the larger `Build2Teach` project, which aims to offer high-quality, self-hosted online courses and empower independent course creators.
 
 ## 🧪 Local Development
 ```bash
@@ -51,8 +44,7 @@ python manage.py migrate
 python manage.py createsuperuser
 ```
 
-## 🛠 Contributing
-Coming soon! This project will welcome contributors once the MVP is finalized.
+## 🔒 License
+This is a **private, non-distributed** project. All rights reserved.
 
-## License
-MIT License — free to use, modify, and teach from.
+For personal use only — not licensed for public distribution or contribution.
