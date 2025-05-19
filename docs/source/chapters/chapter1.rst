@@ -54,7 +54,7 @@ Chapter 1: Project Initialization
 
     Create a folder: build2teach/core/templates/core/
     Add a file: home.html with some HTML content.
-    Update your core/views.py to render this template using render(request, "core/home.html").
+    Update core/views.py to render this template using render(request, "core/home.html").
     Add a shared base template
 
     Create: build2teach/templates/base.html
