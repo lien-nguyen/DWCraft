@@ -10,9 +10,10 @@
 <body class="bg-gray-50 min-h-screen">
     <nav class="bg-white shadow mb-8">
         <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-            <div class="flex items-center space-x-6">
+            <div class="flex items-center space-x-4">
+                <img src="{% static 'img/logo.jpg' %}" alt="Logo" class="w-7 h-7 object-contain rounded-full border-2 border-red-600 shadow-md mr-2 logo-navbar self-center">
                 <a href="{% url 'home' %}" class="text-red-600 font-bold text-xl tracking-tight">build2teach</a>
-                <a href="/blog/" class="text-gray-700 hover:text-red-600 font-medium">Blog</a>
+                <a href="/blog/" class="text-gray-700 hover:text-red-600 font-medium ml-6">Blog</a>
             </div>
         </div>
     </nav>
