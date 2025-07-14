@@ -47,9 +47,11 @@ h1, h2, h3 {
 }
 
 /* Blog Markdown code block improvements */
-.blog-markdown pre {
-    background: #23272e;
-    color: #f8f8f2;
+.blog-markdown pre,
+.blog-markdown .codehilite,
+.blog-markdown .codehilite pre {
+    background: #23272e !important;
+    color: #f8f8f2 !important;
     border-radius: 8px;
     font-family: 'Fira Mono', 'Consolas', monospace;
     font-size: 1em;
