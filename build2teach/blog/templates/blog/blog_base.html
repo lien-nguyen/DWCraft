@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Blog | build2teach{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+      .container { display: flex; }
+      .sidebar {
+        width: 220px;
+        background: #f5f5f5;
+        padding: 20px 10px;
+        min-height: 100vh;
+        border-right: 1px solid #ddd;
+      }
+      .main-content { flex: 1; padding: 30px; }
+      .sidebar a { display: block; margin: 10px 0; color: #333; text-decoration: none; font-weight: 500; }
+      .sidebar a.active, .sidebar a:hover { color: #1976d2; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <h2>Blog Menu</h2>
+            <a href="{% url 'post_list' %}" class="active">All Posts</a>
+            <a href="#">Categories</a>
+            <a href="#">About</a>
+        </nav>
+        <div class="main-content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</body>
+</html>
