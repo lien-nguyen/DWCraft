@@ -1,0 +1,10 @@
+{% extends "mybase.html" %}
+{% block content %}
+<div class="max-w-2xl mx-auto mt-10">
+  <div class="bg-white rounded-lg shadow p-6 mb-8">
+    <h1 class="text-3xl font-bold mb-4 text-red-600">{{ post.title }}</h1>
+    <div class="text-gray-500 mb-4">{{ post.created_at }}</div>
+    <div class="prose max-w-none blog-markdown">{{ post.content_html|safe }}</div>
+  </div>
+</div>
+{% endblock %}

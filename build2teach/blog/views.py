@@ -8,3 +8,8 @@ def post_list(request):
     for post in posts:
         post.content_html = mark_safe(markdown.markdown(post.content, extensions=['fenced_code', 'codehilite']))
     return render(request, 'blog/post_list.html', {'posts': posts})
+
+def post_detail(request, slug):
+    post = Post.objects.get(slug=slug)
+    post.content_html = mark_safe(markdown.markdown(post.content, extensions=['fenced_code', 'codehilite']))
+    return render(request, 'blog/post_detail.html', {'post': post})
