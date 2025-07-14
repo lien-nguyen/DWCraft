@@ -21,16 +21,17 @@
 ## 📂 Project Structure (to be extended)
 ```
 dwhcraft/
-├── Dockerfile
-│   ├── core
-│   ├── docker-compose.yml
-│   ├── dwh_course
-│   ├── manage.py
-│   ├── requirements.txt
-│   ├── static
-│   │   ├── css
-│   │   └── img
-│   └── templates
+    build2teach
+    ├── Dockerfile
+    │   ├── core
+    │   ├── docker-compose.yml
+    │   ├── dwh_course
+    │   ├── manage.py
+    │   ├── requirements.txt
+    │   ├── static
+    │   │   ├── css
+    │   │   └── img
+    │   └── templates
 ```
 
 ## 📖 Part of the Build2Teach Initiative
