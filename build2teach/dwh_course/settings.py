@@ -56,7 +56,7 @@ ROOT_URLCONF = "dwh_course.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],  # This should point to build2teach/templates
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -128,3 +128,15 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+import os
+
+# ...existing code...
+
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")  # Add this line
+
+# Optionally, if you want to serve static files from your 'static' folder during development:
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
