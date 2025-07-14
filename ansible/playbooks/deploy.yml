@@ -1,0 +1,33 @@
+---
+- name: Deploy build2teach Blog to Test Server
+  hosts: build2teach-dev
+  become: true
+
+  vars:
+    deploy_user: admin
+    project_folder: /srv/build2teach
+    repo_url: git@github.com:lien-nguyen/DWCraft.git
+
+  tasks:
+    - name: Ensure project folder exists
+      file:
+        path: "{{ project_folder }}"
+        state: directory
+        owner: "{{ deploy_user }}"
+        group: docker
+        mode: '0755'
+
+    - name: Clone or update Git repository
+      become_user: "{{ deploy_user }}"
+      git:
+        repo: "{{ repo_url }}"
+        dest: "{{ project_folder }}"
+        version: main
+        update: yes
+        force: yes
+
+    - name: Build and start containers
+      become_user: "{{ deploy_user }}"
+      shell: |
+        cd {{ project_folder }}
+        docker compose up -d --build
