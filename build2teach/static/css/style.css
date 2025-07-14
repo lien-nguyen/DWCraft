@@ -46,15 +46,29 @@ h1, h2, h3 {
     max-width: 700px;
 }
 
-code, pre {
-    background: #f3f3f3;
-    border-radius: 4px;
+/* Blog Markdown code block improvements */
+.blog-markdown pre {
+    background: #23272e;
+    color: #f8f8f2;
+    border-radius: 8px;
     font-family: 'Fira Mono', 'Consolas', monospace;
     font-size: 1em;
+    padding: 1em 1.2em;
+    margin: 1.5em 0;
+    overflow-x: auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.blog-markdown code {
+    background: #f3f3f3;
+    color: #c7254e;
+    border-radius: 4px;
+    font-family: 'Fira Mono', 'Consolas', monospace;
+    font-size: 0.97em;
     padding: 0.2em 0.4em;
 }
-
-pre {
-    padding: 1em;
-    overflow-x: auto;
+.blog-markdown pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+    font-size: 1em;
 }
