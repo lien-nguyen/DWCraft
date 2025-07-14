@@ -50,8 +50,6 @@ h1, h2, h3 {
 .blog-markdown pre,
 .blog-markdown .codehilite,
 .blog-markdown .codehilite pre {
-    background: #23272e !important;
-    color: #f8f8f2 !important;
     border-radius: 8px;
     font-family: 'Fira Mono', 'Consolas', monospace;
     font-size: 1em;
@@ -61,8 +59,6 @@ h1, h2, h3 {
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 .blog-markdown code {
-    background: #f3f3f3;
-    color: #c7254e;
     border-radius: 4px;
     font-family: 'Fira Mono', 'Consolas', monospace;
     font-size: 0.97em;
