@@ -1,12 +1,14 @@
 {% extends "mybase.html" %}
 {% block content %}
-  <h1>Blog Posts</h1>
-  {% for post in posts %}
-    <h2>{{ post.title }}</h2>
-    <div>{{ post.content_html|safe }}</div>
-    <small>{{ post.created_at }}</small>
-    <hr>
-  {% empty %}
-    <p>No posts yet.</p>
-  {% endfor %}
+  <div class="post">
+    <h1>Blog Posts</h1>
+    {% for post in posts %}
+      <h2>{{ post.title }}</h2>
+      <div>{{ post.content_html|safe }}</div>
+      <small>{{ post.created_at }}</small>
+      <hr>
+    {% empty %}
+      <p>No posts yet.</p>
+    {% endfor %}
+  </div>
 {% endblock %}
