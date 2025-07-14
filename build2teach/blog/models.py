@@ -7,7 +7,7 @@ from django.utils.text import slugify
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=200, unique=True, blank=True, null=True)
+    slug = models.SlugField(max_length=200, unique=False, blank=True, null=True)
     content = MarkdownxField()
     created_at = models.DateTimeField(auto_now_add=True)
 
