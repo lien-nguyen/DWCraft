@@ -1,0 +1,23 @@
+---
+- name: Ensure project folder exists
+  file:
+    path: /srv/build2teach
+    state: directory
+    owner: admin
+    group: docker
+    mode: '0755'
+
+- name: Clone or update Git repository
+  become_user: admin
+  git:
+    repo: git@github.com:lien-nguyen/DWCraft.git
+    dest: /srv/build2teach
+    version: main
+    update: yes
+    force: yes
+
+- name: Build and start Docker containers
+  become_user: admin
+  shell: |
+    cd /srv/build2teach
+    docker compose up -d --build
