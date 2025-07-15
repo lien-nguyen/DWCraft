@@ -7,7 +7,7 @@
     group: docker
     mode: '0755'
 
-- name: Clone or update Git repository
+- name: Clone or update DWCraft repository (for build2teach app)
   become_user: admin
   git:
     repo: git@github.com:lien-nguyen/DWCraft.git
@@ -16,11 +16,23 @@
     update: yes
     force: yes
 
-- name: Build and start Docker containers
+- name: Pull latest Docker image from GitHub Container Registry
   become_user: admin
   shell: |
-    cd /srv/build2teach
-    docker compose up -d --build
+    docker pull ghcr.io/lien-nguyen/build2teach:latest
+
+- name: Stop and remove old container (if exists)
+  become_user: admin
+  shell: |
+    docker rm -f build2teach || true
+
+- name: Run new Docker container
+  become_user: admin
+  shell: |
+    docker run -d --name build2teach \
+      --env-file /srv/build2teach/.env \
+      -p 8000:8000 \
+      ghcr.io/lien-nguyen/build2teach:latest
 
 - name: Copy operational scripts to dev-tools folder 
   copy: 
