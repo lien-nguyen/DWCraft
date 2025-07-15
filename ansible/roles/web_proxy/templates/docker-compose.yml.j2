@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+
+  traefik:
+    image: traefik:v3.0
+    command:
+      - "--configFile=/etc/traefik/traefik.yml"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./traefik/traefik.yml:/etc/traefik/traefik.yml
+      - ./traefik/acme.json:/etc/traefik/acme.json
+      - /var/run/docker.sock:/var/run/docker.sock
+    labels:
+      - "traefik.enable=true"
+    restart: always
+
+  django:
+    build:
+      context: ./app
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.{{ project_name }}.rule=Host(`{{ domain_name }}`)"
+      - "traefik.http.routers.{{ project_name }}.entrypoints=websecure"
+      - "traefik.http.routers.{{ project_name }}.tls.certresolver=letsencrypt"
+    restart: always
+    environment:
+      - DJANGO_SECRET_KEY={{ django_secret_key }}
+      - DJANGO_ALLOWED_HOSTS={{ domain_name }}
