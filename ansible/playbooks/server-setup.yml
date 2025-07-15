@@ -1,6 +1,6 @@
 
 - name: Bootstrap Build2Teach Test Server
-  hosts: build2teach-dev
+  hosts: testserver
   become: true
 
   vars:
