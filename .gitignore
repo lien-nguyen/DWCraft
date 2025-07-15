@@ -32,6 +32,26 @@ course/modules/*.
 .python-version
 img/
 
+# Ansible Vault and secrets
+ansible/vault.yml
+*.pem
+*.key
+secrets.*
+
+# Docker
+*.pid
+*.sock
+docker-compose.override.yml
+
+# Database dumps
+*.sql
+
+# Coverage and test output
+.coverage
+htmlcov/
+junit.xml
+test-results/
+
 # ignore github-actions for now 
 .github/workflows/django.yml
 
