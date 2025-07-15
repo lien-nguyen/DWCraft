@@ -4,7 +4,7 @@
   become: true
 
   vars:
-    deploy_user: deploy
+    deploy_user: admin
     project_folder: /srv/build2teach
 
   tasks:
