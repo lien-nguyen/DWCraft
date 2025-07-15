@@ -21,7 +21,9 @@
 ## 📂 Project Structure (to be extended)
 ```
 dwhcraft/
-    build2teach
+├── README.md
+├── ansible
+├── build2teach
     ├── Dockerfile
     │   ├── core
     │   ├── docker-compose.yml
@@ -32,6 +34,7 @@ dwhcraft/
     │   │   ├── css
     │   │   └── img
     │   └── templates
+├── ops-scripts
 ```
 
 ## 📖 Part of the Build2Teach Initiative
