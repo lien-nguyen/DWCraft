@@ -1,12 +1,16 @@
-
-- name: Deploy build2teach Blog to Test Server
-  hosts: build2teach-dev
+- name: Deploy Django App + Traefik to Test Server
+  hosts: testserver
   become: true
 
   vars:
     deploy_user: admin
     project_folder: /srv/build2teach
     repo_url: git@github.com:lien-nguyen/DWCraft.git
+    admin_email: "admin@example.com"
+    domain_name: "www.build2teach.com"
+    project_name: "build2teach"
+    django_secret_key: "your-secret-key"
 
   roles:
     - role: app_deploy
+    - role: web_proxy
