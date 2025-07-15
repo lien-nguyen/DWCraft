@@ -21,3 +21,11 @@
   shell: |
     cd /srv/build2teach
     docker compose up -d --build
+
+- name: Copy operational scripts to dev-tools folder 
+  copy: 
+    src: ../../../../ops-scripts/
+    dest: /srv/build2teach/dev-tools/
+    owner: admin
+    group: docker
+    mode: '0755'
