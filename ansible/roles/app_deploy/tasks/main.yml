@@ -24,7 +24,7 @@
 
 - name: Copy operational scripts to dev-tools folder 
   copy: 
-    src: ../../../../ops-scripts/
+    src: ../../../../ops-scripts/ # Todo-Check if this path is correct
     dest: /srv/build2teach/dev-tools/
     owner: admin
     group: docker
