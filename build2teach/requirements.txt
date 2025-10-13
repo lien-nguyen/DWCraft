@@ -5,7 +5,7 @@ python-decouple
 gunicorn
 django-environ
 django-extensions
-djangorestframework==3.15.2
+djangorestframework==3.16.1
 django-markdownx
 pygments # code highlighting
 django-tailwind  # Uncomment if using Tailwind via pip
